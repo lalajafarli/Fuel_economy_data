@@ -31,6 +31,7 @@ df.chr <- data %>%
   select_if(is.character)
 # One Hote Encoding ----
 #bura lazim olmadi sonra
+#cunki sadece cyl,displ ve year variables istifade olundu
 df.chr <- dummyVars(" ~ .", data = df.chr) %>% 
   predict(newdata = df.chr) %>% 
   as.data.frame()
